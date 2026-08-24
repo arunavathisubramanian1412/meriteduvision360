@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Merit Arts and Science College</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #001f3f; color: #333; }
+
+        /* Header / Navbar */
+        header {
+            background-color: #002b49;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        .logo-area { display: flex; align-items: center; gap: 15px; color: #fff; }
+        .logo-area img { width: 50px; height: 50px; border-radius: 50%; background: #fff; }
+        .logo-text h1 { font-size: 1.2rem; font-weight: 800; letter-spacing: 0.5px; }
+        .logo-text p { font-size: 0.75rem; color: #ffb703; }
+        
+        .header-right { display: flex; align-items: center; gap: 20px; }
+        .btn-join {
+            background: linear-gradient(135deg, #f77f00, #fcbf49);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(247, 127, 0, 0.4);
+        }
+        .btn-contact {
+            background-color: #001d3d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Hero Banner Section */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 31, 63, 0.85), rgba(0, 31, 63, 0.9)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200') center/cover;
+            padding: 60px 40px;
+            color: #fff;
+        }
+        .hero-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; color: #ffffff; }
+        .hero-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: #ffb703; margin-top: 8px; border-radius: 2px; }
+        .hero-desc { font-size: 1rem; color: #cbd5e1; margin-bottom: 40px; }
+
+        /* Main Content Card Box */
+        .content-card-wrapper {
+            max-width: 1250px;
+            margin: -30px auto 50px auto;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .grid-3-col {
+            display: grid;
+            grid-template-columns: 1.1fr 1.1fr 1.3fr;
+            gap: 30px;
+        }
+
+        .section-box-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #002b49;
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ffb703;
+        }
+
+        /* Get In Touch Items */
+        .touch-item { display: flex; gap: 15px; margin-bottom: 22px; align-items: flex-start; }
+        .touch-icon {
+            background-color: #002b49;
+            color: #ffb703;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+        .touch-details h4 { font-size: 0.9rem; color: #002b49; font-weight: 700; margin-bottom: 3px; }
+        .touch-details p { font-size: 0.82rem; color: #555; line-height: 1.5; }
+
+        /* What We Do Items */
+        .wd-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+        .wd-icon {
+            background-color: #e2e8f0;
+            color: #002b49;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+        .wd-details h4 { font-size: 0.88rem; color: #002b49; font-weight: 700; margin-bottom: 2px; }
+        .wd-details p { font-size: 0.78rem; color: #666; line-height: 1.4; }
+
+        /* Map Box */
+        .map-box {
+            width: 100%;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            background: #e5e3df;
+        }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
+
+        /* Bottom Question Bar inside Card */
+        .question-bar {
+            margin-top: 40px;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+        }
+        .qb-left { display: flex; align-items: center; gap: 15px; }
+        .qb-icon {
+            background-color: #001f3f;
+            color: #ffb703;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .qb-text h4 { font-size: 0.95rem; font-weight: 700; color: #001f3f; }
+        .qb-text p { font-size: 0.8rem; color: #64748b; }
+        
+        .btn-email-us {
+            background-color: #001d3d;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+        .btn-email-us:hover { background-color: #f77f00; }
+
+        /* Footer */
+        footer {
+            background-color: #001529;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94a3b8;
+            font-size: 0.82rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .social-icons { display: flex; gap: 12px; }
+        .social-icons a {
+            background-color: #e11d48;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .social-icons a.youtube { background-color: #ff0000; }
+        .social-icons a.whatsapp { background-color: #25d366; }
+        .footer-tagline { font-style: italic; color: #cbd5e1; }
+
+        /* Responsive */
+        @media(max-width: 992px) {
+            .grid-3-col { grid-template-columns: 1fr; }
+            .question-bar { flex-direction: column; gap: 15px; text-align: center; }
+            .qb-left { flex-direction: column; }
+            header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div style="background:#fff; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#002b49; font-weight:bold;">MAC</div>
+            <div class="logo-text">
+                <h1>MERIT ARTS AND SCIENCE COLLEGE</h1>
+                <p>Affiliated to Manonmaniam Sundaranar University | Idaikal, Ambasamudram</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="contact.html" class="btn-contact"><i class="fas fa-phone-alt"></i> CONTACT US</a>
+            <a href="#" class="btn-join">Join Now 2026</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="contact-hero">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="hero-title">CONTACT US</h2>
+            <p class="hero-desc">We are here to help! Reach out to us for any queries or assistance.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="content-card-wrapper">
+        <div class="grid-3-col">
+            
+            <!-- Column 1: Get In Touch -->
+            <div>
+                <h3 class="section-box-title">Get In Touch</h3>
+                
+                <div class="touch-item">
+                    <div class="touch-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="touch-details">
+                        <h4>Address</h4>
+                        <p>Main Road, Idaikal, Ambasamudram - 627 602, Tirunelveli District, Tamil Nadu, India.</p>
+                    </div>
+                </div>
+
+                <div class="touch-item">
+                    <div class="touch-icon"><i class="fas fa-phone"></i></div>
+                    <div class="touch-details">
+                        <h4>Phone</h4>
+                        <p>+91 91500 12345</p>
+                    </div>
+                </div>
+
+                <div class="touch-item">
+                    <div class="touch-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="touch-details">
+                        <h4>Email</h4>
+                        <p>merit2017@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="touch-item">
+                    <div class="touch-icon"><i class="fas fa-clock"></i></div>
+                    <div class="touch-details">
+                        <h4>Office Hours</h4>
+                        <p>Monday - Saturday<br>9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: What We Do -->
+            <div>
+                <h3 class="section-box-title">What We Do</h3>
+
+                <div class="wd-item">
+                    <div class="wd-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="wd-details">
+                        <h4>Quality Education</h4>
+                        <p>Committed to academic excellence and holistic development.</p>
+                    </div>
+                </div>
+
+                <div class="wd-item">
+                    <div class="wd-icon"><i class="fas fa-users"></i></div>
+                    <div class="wd-details">
+                        <h4>Student Support</h4>
+                        <p>Guidance and resources to help students succeed.</p>
+                    </div>
+                </div>
+
+                <div class="wd-item">
+                    <div class="wd-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="wd-details">
+                        <h4>Modern Infrastructure</h4>
+                        <p>Well-equipped labs, library and smart learning environment.</p>
+                    </div>
+                </div>
+
+                <div class="wd-item">
+                    <div class="wd-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="wd-details">
+                        <h4>Career Guidance</h4>
+                        <p>Shaping futures with training, placements and mentoring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Find Us (Map) -->
+            <div>
+                <h3 class="section-box-title">Find Us</h3>
+                <div class="map-box">
+                    <!-- Google Map embed for Idaikal, Ambasamudram -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.6!2d77.4!3d8.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNDInMDAuMCJOIDc3wrAyNCcwMC4wIkU!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Question Bar -->
+        <div class="question-bar">
+            <div class="qb-left">
+                <div class="qb-icon"><i class="fas fa-headset"></i></div>
+                <div class="qb-text">
+                    <h4>Have a Question?</h4>
+                    <p>We will get back to you as soon as possible.</p>
+                </div>
+            </div>
+            <a href="mailto:merit2017@gmail.com" class="btn-email-us">Email Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2026 Merit Arts and Science College. All Rights Reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-tagline">Building Knowledge. Inspiring Futures.</div>
+    </footer>
+
+</body>
+</html>

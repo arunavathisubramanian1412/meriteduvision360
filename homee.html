@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merit Arts and Science College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #002b49;
+            --secondary: #0077b6;
+            --accent: #ffb703;
+            --light: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #2b2d42;
+            --msg-btn-gradient: linear-gradient(135deg, #6366f1, #4f46e5);
+            --msg-btn-hover: linear-gradient(135deg, #4f46e5, #4338ca);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--white); color: var(--text-dark); overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* Top Announcement Bar */
+        .top-announce-bar {
+            background: linear-gradient(135deg, #0077b6, #002b49);
+            color: #ffffff; font-size: 0.95rem; font-weight: 700; padding: 10px 0;
+            border-bottom: 2px solid var(--accent); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .marquee-wrapper { display: flex; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-block; animation: scrollMarquee 35s linear infinite; }
+        @keyframes scrollMarquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* Header & Navigation */
+        header { background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .header-main { max-width: 1280px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .brand-logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        
+        .logo-container {
+            width: 75px; height: 75px; display: flex; align-items: center; justify-content: center;
+            background: #ffffff; border-radius: 50%; border: 2px solid var(--secondary); overflow: hidden; flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
+        .logo-container:hover { transform: rotate(360deg); }
+        .logo-container img { width: 100%; height: 100%; object-fit: contain; }
+
+        .brand-text h1 { font-size: 1.4rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
+        .brand-text p { font-size: 0.8rem; color: var(--secondary); font-weight: 600; }
+
+        .btn-accent {
+            background-color: var(--accent); color: var(--primary); padding: 10px 22px;
+            border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+        }
+        .btn-accent:hover { background-color: var(--primary); color: var(--accent); transform: translateY(-3px) scale(1.05); }
+
+        .nav-bar { background-color: var(--primary); overflow: hidden; white-space: nowrap; }
+        .nav-menu-wrapper { display: flex; overflow: hidden; white-space: nowrap; }
+        .nav-menu { display: flex; list-style: none; gap: 15px; padding: 0; margin: 0;}
+        @keyframes scrollNav { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .nav-bar:hover .nav-menu { animation-play-state: paused; }
+
+        .nav-link {
+            display: inline-block; padding: 14px 18px; color: var(--white); text-decoration: none;
+            font-size: 0.88rem; font-weight: 600; text-transform: uppercase; white-space: nowrap; transition: 0.3s;
+        }
+        .nav-link:hover { color: var(--accent); background: rgba(255,255,255,0.12); border-radius: 4px; }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative; min-height: 520px;
+            background: linear-gradient(rgba(0, 43, 73, 0.5), rgba(0, 43, 73, 0.5)), url('college_building.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 50px 20px;
+        }
+        .hero-subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 700; margin-bottom: 10px; text-transform: uppercase; }
+        .hero-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+        .hero-motto { font-size: 1.3rem; font-style: italic; color: #e0f2fe; margin-bottom: 25px; font-weight: 600; }
+
+        /* Stats Counter Section */
+        .stats-section {
+            background: var(--white); margin-top: -40px; position: relative; z-index: 10;
+            max-width: 1100px; margin-left: auto; margin-right: auto; border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); padding: 30px 20px;
+        }
+        .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; text-align: center; }
+        .stat-item { transition: transform 0.3s ease, color 0.3s ease; cursor: pointer; }
+        .stat-item:hover { transform: translateY(-5px); color: var(--secondary); }
+        .stat-icon { font-size: 2.2rem; color: var(--secondary); margin-bottom: 8px; }
+        .counter-value { font-size: 2.2rem; font-weight: 800; color: var(--primary); display: block; }
+        .stat-label { font-size: 0.8rem; font-weight: 700; color: #666; text-transform: uppercase; }
+
+        .section { padding: 60px 20px; }
+        .section-bg { background-color: var(--light); }
+        .container { max-width: 1280px; margin: 0 auto; }
+        .section-title { font-size: 2.3rem; color: var(--primary); font-weight: 800; text-align: center; margin-bottom: 10px; }
+        .section-desc { text-align: center; color: #555; font-size: 0.95rem; margin-bottom: 40px; }
+
+        .btn-img-message {
+            background: var(--msg-btn-gradient); color: var(--white); border: none;
+            padding: 12px 28px; border-radius: 50px; font-size: 0.9rem; font-weight: 700;
+            cursor: pointer; text-transform: uppercase; margin: 0 auto; display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4); transition: all 0.3s ease;
+        }
+        .btn-img-message:hover { background: var(--msg-btn-hover); transform: translateY(-3px) scale(1.05); }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.65); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center;
+            z-index: 10000; opacity: 0; visibility: hidden; transition: all 0.4s ease;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-box {
+            background: var(--white); width: 90%; max-width: 650px; border-radius: 16px;
+            overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.25); transform: translateY(-30px) scale(0.95);
+            transition: all 0.4s ease; max-height: 85vh; display: flex; flex-direction: column;
+        }
+        .modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
+        .modal-header { background: var(--primary); color: var(--white); padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--accent); }
+        .modal-header h3 { font-size: 1.25rem; font-weight: 700; }
+        .modal-close { background: none; border: none; color: var(--white); font-size: 1.6rem; cursor: pointer; transition: 0.2s; }
+        .modal-close:hover { color: var(--accent); }
+        .modal-body { padding: 25px; font-size: 0.95rem; line-height: 1.7; color: #444; overflow-y: auto; text-align: justify; }
+
+        .left-floating-bar {
+            position: fixed; left: 20px; top: 55%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 15px; z-index: 9999;
+        }
+        .side-float-btn {
+            width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: all 0.3s ease; text-decoration: none; font-size: 1.4rem;
+            position: relative;
+        }
+        .side-float-btn:hover { transform: scale(1.15) rotate(8deg); }
+        .side-float-btn.ai-bot {
+            background: linear-gradient(135deg, #1e1b4b, #312e81); color: var(--accent);
+            border: 2px solid var(--accent); box-shadow: 0 0 20px rgba(255, 183, 3, 0.4);
+            animation: uniqueBotPulse 2.5s infinite;
+        }
+        @keyframes uniqueBotPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 183, 3, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 183, 3, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 183, 3, 0); }
+        }
+        .side-float-btn.side-whatsapp { background: #25d366; color: #ffffff; }
+        .side-float-btn.side-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #ffffff; }
+        .side-float-btn.side-youtube { background: #FF0000; color: #ffffff; }
+        .side-float-btn.side-call { background: #0077b6; color: #ffffff; }
+    </style>
+</head>
+<body>
+
+    <div class="top-announce-bar">
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                🎓 ADMISSIONS OPEN FOR ACADEMIC YEAR 2026-2027 | MERIT ARTS AND SCIENCE COLLEGE | APPLY ONLINE TODAY | 100% PLACEMENT RECORD
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-main">
+            <a href="#home" class="brand-logo">
+                <div class="logo-container"><img src="meritlogo.jpg" alt="Merit Logo"></div>
+                <div class="brand-text">
+                    <h1>Merit Arts and Science College</h1>
+                    <p>Affiliated to Manonmaniam Sundaranar University | Idaikal, Ambasamudram</p>
+                </div>
+            </a>
+            <a href="admission.html" class="btn-accent"><i class="fas fa-sparkles"></i> Join Now 2026</a>
+        </div>
+
+        <nav class="nav-bar">
+            <div class="nav-menu-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="aboutus.html" class="nav-link">About us</a></li>
+                    <li><a href="#departments" class="nav-link">Departments</a></li>
+                    <li><a href="admission.html" class="nav-link">Admissions</a></li>
+                    <li><a href="#fees" class="nav-link">Fee Payment</a></li>
+                    <li><a href="question-bank.html" class="nav-link">Question Bank</a></li>
+                    <li><a href="#campus" class="nav-link">Campus Life</a></li>
+                    <li><a href="#placement" class="nav-link">Placements</a></li>
+                    <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section" id="home">
+        <div>
+            <p class="hero-subtitle">Empowering Young Minds For A Better Tomorrow</p>
+        <h2 class="hero-title">WELCOME TO MERIT ARTS AND SCIENCE COLLEGE</h2>
+            <p class="hero-motto">"As You Think, So You Become"</p>
+            <a href="admission.html" class="btn-accent" style="font-size:1rem; padding: 12px 28px;">ADMISSION 2026 - 2027</a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item"><i class="fas fa-university stat-icon"></i><span class="counter-value" data-target="7" data-suffix="+">0</span><span class="stat-label">Departments</span></div>
+            <div class="stat-item"><i class="fas fa-user-tie stat-icon"></i><span class="counter-value" data-target="100" data-suffix="+">0</span><span class="stat-label">Faculty Members</span></div>
+            <div class="stat-item"><i class="fas fa-user-graduate stat-icon"></i><span class="counter-value" data-target="2500" data-suffix="+">0</span><span class="stat-label">Students</span></div>
+            <div class="stat-item"><i class="fas fa-award stat-icon"></i><span class="counter-value" data-target="9" data-suffix="+ Years">0</span><span class="stat-label">Experience</span></div>
+            <div class="stat-item"><i class="fas fa-briefcase stat-icon"></i><span class="counter-value" data-target="100" data-suffix="%">0</span><span class="stat-label">Placement</span></div>
+        </div>
+    </section>
+    <!-- JavaScript code for Modals, Counter Animation from 0 (Modified for smoother/slower effect) -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.counter-value');
+            
+            const startCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix');
+                let count = 0;
+                const duration = 2000; // 2 வினாடிகள்
+                const increment = target / (duration / 25); 
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = Math.floor(count);
+                        setTimeout(updateCount, 25);
+                    } else {
+                        counter.innerText = target + suffix;
+                    }
+                };
+                updateCount();
+            };
+            const observerOptions = {
+                threshold: 0.2
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target.querySelector('.counter-value');
+                        if(counter) {
+                            startCounter(counter);
+                        }
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.stat-item').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+    <!-- Leadership Council Section with Pop-up Hover Animation -->
+    <section class="section" id="leadership">
+        <div class="container">
+            <h2 class="section-title">Our Core Leadership Council</h2>
+            <p class="section-desc">Guiding our institution towards academic excellence and visionary growth</p>
+            
+            <style>
+                .leader-card {
+                    background: var(--white); border-radius: 16px; overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,43,73,0.08); border: 2px solid #e2e8f0;
+                    display: flex; flex-direction: column; text-align: center; padding-bottom: 25px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                .leader-card:hover {
+                    transform: translateY(-12px);
+                    box-shadow: 0 20px 40px rgba(0,43,73,0.18);
+                    border-color: var(--secondary);
+                }
+                .leader-img-container { width: 100%; height: 260px; overflow: hidden; background: #fff; }
+                .leader-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+                .leader-card:hover .leader-img-container img { transform: scale(1.05); }
+            </style>
+
+            <div class="leadership-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                
+                <div class="leader-card">
+                    <div class="leader-img-container"><img src="chairman.jpg" alt="Mr. A. Subramanian"></div>
+                    <div style="padding: 18px 15px 15px 15px;">
+                        <p style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Chairman</p>
+                        <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 4px;">Mr. A. Subramanian</h3>
+                        <p style="font-size: 0.78rem; color: #555; font-weight: 600; margin-bottom: 10px; min-height: 38px;">B.Sc., BGL., M.A(Eng)., M.A(Pol.Sci)., M.Ed.</p>
+                    </div>
+                    <button class="btn-img-message" onclick="openModal('chairmanModal')"><i class="fas fa-envelope-open-text"></i> Message</button>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-img-container"><img src="vicechair.jpg" alt="Mrs. S. Nagalakshmi"></div>
+                    <div style="padding: 18px 15px 15px 15px;">
+                        <p style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Vice Chairman</p>
+                        <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 4px;">Mrs. S. Nagalakshmi</h3>
+                        <p style="font-size: 0.78rem; color: #555; font-weight: 600; margin-bottom: 10px; min-height: 38px;">M.A., B.Ed.</p>
+                    </div>
+                    <button class="btn-img-message" onclick="openModal('vicechairModal')"><i class="fas fa-envelope-open-text"></i> Message</button>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-img-container"><img src="director.jpg" alt="Mrs. K. Rajeswari"></div>
+                    <div style="padding: 18px 15px 15px 15px;">
+                        <p style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Director</p>
+                        <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 4px;">Mrs. K. Rajeswari</h3>
+                        <p style="font-size: 0.78rem; color: #555; font-weight: 600; margin-bottom: 10px; min-height: 38px;">M.Sc., M.Phil., SET, M.Ed.</p>
+                    </div>
+                    <button class="btn-img-message" onclick="openModal('directorModal')"><i class="fas fa-envelope-open-text"></i> Message</button>
+                </div>
+
+                <div class="leader-card">
+                    <div class="leader-img-container"><img src="principal.jpg" alt="Dr. E. Edwin Lawrence"></div>
+                    <div style="padding: 18px 15px 15px 15px;">
+                        <p style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Principal</p>
+                        <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 4px;">Dr. E. Edwin Lawrence</h3>
+                        <p style="font-size: 0.78rem; color: #555; font-weight: 600; margin-bottom: 10px; min-height: 38px;">Ph.D., M.Phil., M.Ed.</p>
+                    </div>
+                    <button class="btn-img-message" onclick="openModal('principalModal')"><i class="fas fa-envelope-open-text"></i> Message</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- News, Auto-Scrolling Events & Merit Gallery Section -->
+    <section class="section-bg" style="padding: 60px 20px;">
+        <div class="container" style="max-width: 1200px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+            
+            <!-- C-DAC News Box -->
+            <div style="background: #ffffff; border-radius: 15px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); height: 500px; display: flex; flex-direction: column; border-top: 5px solid var(--primary);">
+                <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 10px;"><i class="fas fa-newspaper"></i> News: C-DAC Training Centre</h3>
+                <div style="overflow-y: auto; flex-grow: 1; padding-right: 8px;">
+                    <div style="font-size: 0.83rem; color: #333; line-height: 1.6; text-align: justify;">
+                        <p style="margin-bottom: 10px;"><b>Merit Arts and Science College is an Authorized Training Centre of C-DAC.</b></p>
+                        <p style="margin-bottom: 10px;">We are proud to announce that Merit Arts and Science College is an Authorized Training Centre of the Centre for Development of Advanced Computing (C-DAC).
+
+C-DAC is a premier R&D organization of the Ministry of Electronics and Information Technology, Government of India, recognized for its cutting-edge contributions in advanced computing, software technologies, and skill development.
+
+As an authorized training centre, our college offers students the opportunity to:
+
+Gain industry-relevant training under C-DAC’s approved curriculum.
+Access nationally recognized certification.
+Enhance their skills in emerging technologies and improve employability.
+This collaboration enables our students to stay ahead in today’s competitive IT and technology-driven world.</p>
+                        <ul style="padding-left: 18px; margin-bottom: 12px;">
+                            <li>Industry-relevant training under C-DAC curriculum.</li>
+                            <li>Nationally recognized certification.</li>
+                            <li>Enhanced skills in emerging tech.</li>
+                        </ul>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                            <img src="cdacimg1.jpg" alt="C-DAC 1" style="width: 100%; height: 110px; object-fit: cover; border-radius: 8px;">
+                            <img src="cdacimg2.jpg" alt="C-DAC 2" style="width: 100%; height: 110px; object-fit: cover; border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-Scrolling Events Box -->
+            <div style="background: #ffffff; border-radius: 15px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); height: 500px; display: flex; flex-direction: column; border-top: 5px solid var(--primary); overflow: hidden;">
+                <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 10px;"><i class="fas fa-calendar-alt"></i> Events</h3>
+                <style>
+                    .events-scroll-container { height: 100%; overflow: hidden; position: relative; }
+                    .events-track { display: flex; flex-direction: column; gap: 12px; animation: eventsAutoScroll 15s linear infinite; }
+                    .events-track:hover { animation-play-state: paused; }
+                    @keyframes eventsAutoScroll {
+                        0% { transform: translateY(0); }
+                        100% { transform: translateY(-50%); }
+                    }
+                </style>
+                <div class="events-scroll-container">
+                    <div class="events-track">
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Republic Day Cultural Fest & Science Exhibition</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">National Science Day & AI Tech Hackathon</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Inter-Collegiate Mathematics Quiz Competition</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Commerce Expo & Financial Literacy Seminar</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Annual Sports Meet & College Day Celebrations</b></div>
+                        <!-- Duplicate for smooth loop -->
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Republic Day Cultural Fest & Science Exhibition</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">National Science Day & AI Tech Hackathon</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Inter-Collegiate Mathematics Quiz Competition</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Commerce Expo & Financial Literacy Seminar</b></div>
+                        <div style="background: #f0f7ff; padding: 12px; border-radius: 8px; border-left: 4px solid var(--secondary);"><b style="font-size: 0.85rem; color: var(--primary);">Annual Sports Meet & College Day Celebrations</b></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Merit Gallery Reels Style -->
+            <div style="background: #ffffff; border-radius: 15px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); height: 500px; display: flex; flex-direction: column; border-top: 5px solid var(--primary); overflow: hidden;">
+                <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 10px;"><i class="fas fa-camera"></i> Merit Gallery</h3>
+                <style>
+                    .reel-scroll-container { height: 100%; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+                    .reel-track { display: flex; flex-direction: column; gap: 12px; animation: reelAutoScroll 12s linear infinite; }
+                    .reel-track:hover { animation-play-state: paused; }
+                    .reel-track img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+                    @keyframes reelAutoScroll { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+                </style>
+                <div class="reel-scroll-container">
+                    <div class="reel-track">
+                        <img src="gallery1.jpg" alt="Gallery 1">
+                        <img src="gallery2.jpg" alt="Gallery 2">
+                        <img src="gallery3.jpg" alt="Gallery 3">
+                        <img src="gallery4.jpg" alt="Gallery 4">
+                        <img src="gallery1.jpg" alt="Gallery 1">
+                        <img src="gallery2.jpg" alt="Gallery 2">
+                        <img src="gallery3.jpg" alt="Gallery 3">
+                        <img src="gallery4.jpg" alt="Gallery 4">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- 1. Academic Departments (Vertical Stacked Layout) -->
+    <section class="section" id="departments" style="background-color: #f9fafb;">
+        <div class="container" style="max-width: 1200px;">
+            <h2 class="section-title">Academic Departments</h2>
+            <p class="section-desc">Explore our diverse undergraduate programs tailored for future success</p>
+            
+            <style>
+                .unique-dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+                .unique-dept-card {
+                    background: #ffffff; padding: 25px; border-radius: 14px; text-align: center;
+                    box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 2px solid #e5e7eb;
+                    transition: all 0.3s ease; cursor: pointer;
+                }
+                .unique-dept-card i { font-size: 2.3rem; color: var(--secondary); margin-bottom: 12px; transition: color 0.3s ease; }
+                .unique-dept-card h3 { font-size: 0.95rem; color: var(--primary); font-weight: 700; transition: color 0.3s ease; }
+                .unique-dept-card:hover {
+                    transform: translateY(-8px); border-color: var(--accent); background: #fffdf4;
+                    box-shadow: 0 12px 30px rgba(255, 183, 3, 0.35);
+                }
+                .unique-dept-card:hover i, .unique-dept-card:hover h3 { color: #d97706; }
+            </style>
+
+            <div class="unique-dept-grid">
+                <div class="unique-dept-card"><i class="fas fa-laptop-code"></i><h3>B.Sc Computer Science</h3></div>
+                <div class="unique-dept-card"><i class="fas fa-brain"></i><h3>B.Sc AI & Data Science</h3></div>
+                <div class="unique-dept-card"><i class="fas fa-square-root-variable"></i><h3>B.Sc Mathematics</h3></div>
+                <div class="unique-dept-card"><i class="fas fa-atom"></i><h3>B.Sc Physics</h3></div>
+                <div class="unique-dept-card"><i class="fas fa-flask"></i><h3>B.Sc Chemistry</h3></div>
+                <div class="unique-dept-card"><i class="fas fa-chart-line"></i><h3>B.Com (Commerce)</h3></div>
+                <div class="unique-dept-card"><i class="fas fa-book-open"></i><h3>B.A English</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Campus Virtual Tour Section (Directly Below Departments) -->
+    <section class="section" id="virtual-tour" style="text-align: center; background: linear-gradient(135deg, #002b49, #005086); color: white; padding: 80px 20px;">
+        <div class="container">
+            <h2 class="section-title" style="color: #ffffff;">Campus Virtual Tour</h2>
+            <p class="section-desc" style="color: #e0f2fe; margin-bottom: 30px;">Explore our vibrant campus environment and see our facilities directly via Google Maps.</p>
+            <a href="https://www.google.com/maps/search/Merit+Arts+and+Science+College+Idaikal+Ambai+Main+Road" target="_blank" 
+               style="background: #ffb703; color: #002b49; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+               <i class="fas fa-map-marked-alt"></i> START VIRTUAL TOUR
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. College Gate Image Section (Directly Below Virtual Tour) -->
+    <section class="section" style="text-align: center; background-color: #f9fafb;">
+        <div class="container">
+            <h2 class="section-title">Our College Gateway</h2>
+            <p class="section-desc">Welcome to Merit Arts and Science College</p>
+            <img src="meritgate.jpg" alt="Merit College Gate" style="max-width: 80%; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 4px solid var(--white);">
+        </div>
+    </section>
+    <!-- Left Floating Bar -->
+    <div class="left-floating-bar">
+        <button class="side-float-btn ai-bot" onclick="window.botpress.open()" title="AI Chat Assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        <a href="https://whatsapp.com/channel/0029VbAC1l07IUYR31mOMj3j" target="_blank" class="side-float-btn side-whatsapp" title="WhatsApp Channel">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/merit_2017?igsh=YTc0Ym4wbXF6d283" target="_blank" class="side-float-btn side-instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@YourCollegeYouTubeChannel" target="_blank" class="side-float-btn side-youtube" title="YouTube Channel">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="tel:+919876543210" class="side-float-btn side-call" title="Call College Office">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Modals for Leadership Messages -->
+    <div id="chairmanModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header"><h3>Chairman’s Message</h3><button class="modal-close" onclick="closeModal('chairmanModal')">&times;</button></div>
+            <div class="modal-body">
+                <p style="margin-bottom: 12px;">At Merit Arts and Science College, our vision is deeply rooted in the belief that education is the most powerful tool for individual growth and societal progress. Since the inception of our institution, we have focused on creating a learning environment that empowers rural youth with academic excellence, moral strength, and life skills.
+We understand that in today’s competitive world, a degree alone is not enough. That’s why we ensure our students are equipped with values, technology, and global perspectives. It gives me immense pride to see our college evolve as a center of inclusive, value-based education that shapes responsible citizens.
+I urge every student to make the best use of the facilities, opportunities, and mentorship available on campus. Education is not just about learning facts, but about developing the ability to think independently, solve problems, and serve humanity.
+Let us walk together in this noble mission and continue building a future we can all be proud of. Welcome to the Merit family.
+– Mr. A. Subramanian, Chairman</p>
+                <p><b>– Mr. A. Subramanian, Chairman</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="vicechairModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header"><h3>Vice Chairman’s Message</h3><button class="modal-close" onclick="closeModal('vicechairModal')">&times;</button></div>
+            <div class="modal-body">
+                <p style="margin-bottom: 12px;">As Vice Chairman, I feel privileged to be part of an institution that is committed to quality education, discipline, and character formation. At Merit Arts and Science College, we strive to provide a nurturing atmosphere where students can learn, grow, and discover their true potential.
+Our focus goes beyond academics — we believe in educating the heart and mind, ensuring our students evolve into well-rounded individuals. We offer an inclusive space for learning where every student, regardless of their background, is treated with dignity and given equal opportunity to succeed.
+It is our goal to equip our learners not only with subject knowledge but with values such as honesty, responsibility, and respect. I warmly invite parents, guardians, and aspiring students to join hands with us in this journey of transformation.
+With the support of our dedicated faculty, modern facilities, and student-centric approach, we are confident in shaping the leaders of tomorrow.
+– Mrs. S. Nagalakshmi, Vice Chairman</p>
+                <p><b>– Mrs. S. Nagalakshmi, Vice Chairman</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="directorModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header"><h3>Director’s Message</h3><button class="modal-close" onclick="closeModal('directorModal')">&times;</button></div>
+            <div class="modal-body">
+                <p style="margin-bottom: 12px;">With great joy and pride, I extend my heartfelt greetings to all students, parents, and stakeholders of Merit Arts and Science College. As Director, I have had the privilege to witness the transformation of many young minds into capable, confident individuals ready to face the challenges of the real world.
+Our college is not just an academic institution; it is a place where values are taught, dreams are nurtured, and futures are built. We blend traditional education with modern innovation to make learning engaging, meaningful, and future-ready.
+Whether it's classroom teaching, laboratory work, or co-curricular activities, every aspect of student life here is crafted with purpose. We emphasize mentorship, guidance, and continuous improvement across all departments.
+I sincerely thank the teaching and non-teaching staff for their commitment, and I encourage every student to be curious, courageous, and committed to excellence. Together, let us uphold the legacy and spirit of Merit.
+
+– Mrs. K. Rajeswari, Director</p>
+                <p><b>– Mrs. K. Rajeswari, Director</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="principalModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header"><h3>Principal’s Message</h3><button class="modal-close" onclick="closeModal('principalModal')">&times;</button></div>
+            <div class="modal-body">
+                <p style="margin-bottom: 12px;">Welcome to Merit Arts and Science College — an institution where knowledge meets character. As the Principal, it is both an honor and a responsibility to guide an academic community that believes in holistic education.
+We believe education is not confined to textbooks, but extends to values, discipline, and practical wisdom. Our college offers a wide spectrum of undergraduate courses backed by experienced faculty, well-equipped laboratories, digital infrastructure, and vibrant campus life.
+We place a strong emphasis on student engagement through clubs, research initiatives, and social outreach programs. We aim to create a safe, inclusive, and intellectually stimulating environment where students are encouraged to explore, experiment, and evolve.
+At Merit, every student is treated not just as a learner, but as a future leader. I urge all our students to take ownership of their learning journey and make every effort to grow personally and professionally. Let’s continue to learn, innovate, and achieve — together.
+– Dr. E. Edwin Lawrence, Principal</p>
+                <p><b>– Dr. E. Edwin Lawrence, Principal</b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact" style="background-color: var(--primary); color: #fff; padding-top: 50px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; padding-bottom: 40px;">
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 12px;">Merit College Details</h4>
+                    <p style="font-size:0.88rem; line-height:1.6;">Main Road, Idaikal, Ambasamudram - 627 602.<br>Email: maasc2017@gmail.com</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 12px;">Follow Us</h4>
+                    <div style="display: flex; gap: 15px; margin-top: 10px;">
+                        <a href="https://www.instagram.com/merit_2017" target="_blank" style="width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%); color:#fff; text-decoration:none;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://whatsapp.com" target="_blank" style="width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#25d366; color:#fff; text-decoration:none;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/@YourCollegeYouTubeChannel" target="_blank" style="width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#FF0000; color:#fff; text-decoration:none;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 12px;">Admissions 2026</h4>
+                    <p style="font-size:0.88rem; line-height:1.6;">Admissions Open. Contact office for prospectus and online enrollment.</p>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #001729; padding: 18px; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1);">&copy; 2026 Merit Arts and Science College. All Rights Reserved.</div>
+    </footer>
+
+    <!-- JavaScript code for Modals, Counter Animation from 0 -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+
+        // Counter Animation from 0 to target value
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.counter-value');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const suffix = counter.getAttribute('data-suffix');
+                let count = 0;
+                const speed = target / 40; 
+
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target + suffix;
+                    }
+                };
+                updateCount();
+            });
+        });
+    </script>
+
+    <!-- Botpress AI Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/08/01/14/20260801141608-Q0CODS9D.js" defer></script>
+</body>
+</html>

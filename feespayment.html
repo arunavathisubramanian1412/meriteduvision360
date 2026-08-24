@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merit Arts and Science College - Fee Payment Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .portal-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 15px;
+        }
+
+        .header h1 {
+            color: #004080;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            color: #555;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #004080;
+            box-shadow: 0 0 5px rgba(0, 64, 128, 0.2);
+        }
+
+        .pay-btn {
+            background-color: #004080;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            margin-top: 10px;
+        }
+
+        .pay-btn:hover {
+            background-color: #00264d;
+        }
+
+        .pay-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-container">
+        <div class="header">
+            <h1>மெரிட் ஆர்ட்ஸ் அண்ட் சயின்ஸ் காலேஜ்</h1>
+            <h2>கட்டணச் செலுத்தும் போர்ட்கல் (Fee Payment Portal)</h2>
+        </div>
+
+        <form id="feeForm" onsubmit="handlePayment(event)">
+            <!-- Register Number (6 to 16 digits) -->
+            <div class="form-group">
+                <label for="regNumber">பதிவு எண் (Register Number - 6 to 16 Digits):</label>
+                <input type="text" id="regNumber" required pattern="\d{6,16}" title="தயவுசெய்து 6 முதல் 16 இலக்க எண்களை மட்டும் உள்ளிடவும்" placeholder="உதாரணம்: 123456789012">
+            </div>
+
+            <!-- Student Name -->
+            <div class="form-group">
+                <label for="studentName">மாணவர் பெயர் (Student Name):</label>
+                <input type="text" id="studentName" required placeholder="உங்கள் முழுப் பெயரை உள்ளிடவும்">
+            </div>
+
+            <!-- Academic Year (First, Second, Third Year) -->
+            <div class="form-group">
+                <label for="academicYear">கல்வி ஆண்டு (Academic Year):</label>
+                <select id="academicYear" required>
+                    <option value="">ஆண்டைத் தேர்ந்தெடுக்கவும்</option>
+                    <option value="First Year">முதலாம் ஆண்டு (First Year)</option>
+                    <option value="Second Year">இரண்டாம் ஆண்டு (Second Year)</option>
+                    <option value="Third Year">மூன்றாம் ஆண்டு (Third Year)</option>
+                </select>
+            </div>
+
+            <!-- Departments -->
+            <div class="form-group">
+                <label for="department">துறை (Department):</label>
+                <select id="department" required>
+                    <option value="">துறையைத் தேர்ந்தெடுக்கவும்</option>
+                    <option value="BSc Computer Science">BSc Computer Science</option>
+                    <option value="BSc Artificial Intelligence and Data Science">BSc Artificial Intelligence and Data Science</option>
+                    <option value="BSc Mathematics">BSc Mathematics</option>
+                    <option value="BSc Chemistry">BSc Chemistry</option>
+                    <option value="BSc Physics">BSc Physics</option>
+                    <option value="BCom">BCom</option>
+                    <option value="BA English Literature">BA English Literature</option>
+                </select>
+            </div>
+
+            <!-- Select Fee Type -->
+            <div class="form-group">
+                <label for="feeType">கட்டண வகை (Select Fee Type):</label>
+                <select id="feeType" required>
+                    <option value="">கட்டண வகையைத் தேர்ந்தெடுக்கவும்</option>
+                    <option value="Tuition Fee">கல்விக் கட்டணம் (Tuition Fee)</option>
+                    <option value="Hostel Fee">விடுதிக் கட்டணம் (Hostel Fee)</option>
+                    <option value="Transport Fee">போக்குவரத்துக் கட்டணம் (Transport Fee)</option>
+                </select>
+            </div>
+
+            <!-- Amount Entry -->
+            <div class="form-group">
+                <label for="amount">செலுத்த வேண்டிய தொகை (Amount):</label>
+                <input type="number" id="amount" required min="1" placeholder="தொகையை உள்ளிடவும் (எ.கா: 15000)">
+            </div>
+
+            <!-- Select Payment Method -->
+            <div class="form-group">
+                <label for="paymentMethod">செலுத்தும் முறை (Select Payment Method):</label>
+                <select id="paymentMethod" required>
+                    <option value="">முறைமையைத் தேர்ந்தெடுக்கவும்</option>
+                    <option value="UPI / QR Code">யூபிஐ அல்லது க்யூஆர் கோடு (UPI / QR Code)</option>
+                    <option value="Net Banking">நெட் பேங்கிங் (Net Banking)</option>
+                    <option value="Debit / Credit Card">டெபிட் அல்லது கிரெடிட் கார்டு (Debit / Credit Card)</option>
+                </select>
+            </div>
+
+            <!-- Pay Now Button -->
+            <button type="submit" class="pay-btn">இப்போது செலுத்தவும் (Pay Now)</button>
+        </form>
+    </div>
+
+    <script>
+        function handlePayment(event) {
+            event.preventDefault(); // பக்கத்தை ரீப்ரெேஷ் ஆகுவதை தவிர்க்கும்
+
+            const regNum = document.getElementById('regNumber').value;
+            const name = document.getElementById('studentName').value;
+            const amount = document.getElementById('amount').value;
+            const method = document.getElementById('paymentMethod').value;
+
+            // எளிமையான சரிபார்ப்பு மற்றும் வெற்றிகரமான செய்தி
+            alert(`வணக்கம் ${name}!\nஉங்கள் பதிவு எண்: ${regNum}\nசெலுத்த வேண்டிய தொகை: ₹${amount}\nதேர்ந்தெடுக்கப்பட்ட முறை: ${method}\n\nகட்டணச் செலுத்தும் நுழைவாயிலுக்கு (Payment Gateway) மாற்றப்படுகிறீர்கள்...`);
+            
+            // இங்கே நீங்கள் உங்களுடைய உண்மையான Payment Gateway (Razorpay, PayU, SBI ePay போன்றது) கோட் இணைத்துக் கொள்ளலாம்.
+        }
+    </script>
+
+</body>
+</html>
