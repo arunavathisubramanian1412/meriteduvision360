@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank - Merit Arts and Science College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #002b49; --secondary: #0077b6; --accent: #ffb703; --light: #f8fafc; --white: #ffffff; --text-dark: #2b2d42; --border-color: #cbd5e1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: var(--text-dark); line-height: 1.6; }
+        
+        /* Header Theme from Admission Page */
+        header { background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .header-main { max-width: 1280px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .brand-logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-container { width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 50%; border: 2px solid var(--secondary); overflow: hidden; flex-shrink: 0; }
+        .logo-container img { width: 100%; height: 100%; object-fit: contain; }
+        .brand-text h1 { font-size: 1.3rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
+        .brand-text p { font-size: 0.8rem; color: var(--secondary); font-weight: 600; }
+        
+        /* Back to Home Button Style */
+        .back-home-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0, 43, 73, 0.2);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .back-home-btn:hover { background-color: var(--secondary); transform: translateY(-2px); }
+
+        .container { max-width: 1000px; margin: 35px auto; padding: 0 20px; }
+        
+        .section-title { text-align: center; font-size: 1.3rem; color: var(--primary); font-weight: 800; margin-bottom: 25px; text-transform: uppercase; border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; width: 100%; }
+
+        /* Category Buttons Grid */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; margin-bottom: 30px; }
+        .cat-btn { background: var(--white); color: var(--primary); border: 2px solid var(--secondary); padding: 18px; font-size: 0.95rem; font-weight: 700; border-radius: 10px; cursor: pointer; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .cat-btn:hover { background: var(--accent); color: var(--primary); border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 183, 3, 0.3); }
+
+        /* Course List */
+        .course-list { background: var(--white); border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); padding: 20px; margin-bottom: 30px; display: none; border-top: 5px solid var(--accent); }
+        .course-item { padding: 14px 18px; border-bottom: 1px solid #e2e8f0; cursor: pointer; font-weight: 600; color: var(--text-dark); display: flex; justify-content: space-between; align-items: center; transition: 0.2s; border-radius: 6px; }
+        .course-item:hover { background: #f8fafc; color: var(--secondary); padding-left: 22px; }
+        .course-item:last-child { border-bottom: none; }
+
+        /* Exam Year / Month Selection */
+        .year-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; display: none; background: var(--white); padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+        .year-btn { padding: 14px; border: none; border-radius: 8px; color: white; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15); transition: transform 0.2s; }
+        .btn-nov-25 { background-color: #dc2626; }
+        .btn-apr-25 { background-color: #16a34a; }
+        .btn-nov-24 { background-color: #d97706; }
+        .year-btn:hover { opacity: 0.95; transform: scale(1.01); }
+
+        /* Question Paper Table */
+        .table-container { background: var(--white); border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); overflow: hidden; display: none; margin-bottom: 40px; border-top: 5px solid var(--primary); }
+        .table-header-info { background: #f8fafc; padding: 15px 20px; border-bottom: 2px solid #e2e8f0; font-size: 0.9rem; font-weight: 600; color: var(--primary); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 14px 20px; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; }
+        th { background: var(--primary); color: var(--white); font-weight: 600; }
+        tr:hover { background: #f8fafc; }
+
+        .download-btn { background-color: var(--accent); color: var(--primary); padding: 7px 14px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(255, 183, 3, 0.3); transition: background 0.2s; }
+        .download-btn:hover { background-color: #e5a602; }
+
+        .back-step-btn { display: inline-block; margin-bottom: 20px; color: var(--primary); background: #e2e8f0; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.2s; }
+        .back-step-btn:hover { background: #cbd5e1; }
+
+        footer { background-color: var(--primary); color: #fff; padding: 20px; text-align: center; font-size: 0.85rem; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-main">
+            <a href="homee.html" class="brand-logo">
+                <div class="logo-container"><img src="meritlogo.jpg" alt="Merit Logo"></div>
+                <div class="brand-text">
+                    <h1>Merit Arts & Science College</h1>
+                    <p>Idaikal, Ambasamudram</p>
+                </div>
+            </a>
+            <a href="homee.html" class="back-home-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Step 1: Category Selection -->
+        <div id="step1">
+            <div class="section-title">Degree Examination Question Papers - UG Programmes</div>
+            <div class="category-grid" style="margin-top: 25px;">
+                <button class="cat-btn" onclick="selectCategory('Science')"><i class="fas fa-flask" style="color: var(--secondary); margin-right: 8px;"></i> Science</button>
+                <button class="cat-btn" onclick="selectCategory('Arts')"><i class="fas fa-palette" style="color: var(--secondary); margin-right: 8px;"></i> Arts</button>
+                <button class="cat-btn" onclick="selectCategory('Commerce')"><i class="fas fa-chart-line" style="color: var(--secondary); margin-right: 8px;"></i> Commerce</button>
+                <button class="cat-btn" onclick="selectCategory('Common')"><i class="fas fa-book-open" style="color: var(--secondary); margin-right: 8px;"></i> Common Paper</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Course Selection -->
+        <div id="step2" class="course-list">
+            <button class="back-step-btn" onclick="goBackToStep1()"><i class="fas fa-arrow-left"></i> Back to Categories</button>
+            <h3 style="margin-bottom: 15px; color: var(--primary); font-size: 1.1rem;" id="courseHeading">Select Course</h3>
+            <div id="courseItemsContainer"></div>
+        </div>
+
+        <!-- Step 3: Exam Month & Year Selection -->
+        <div id="step3" class="year-grid">
+            <button class="back-step-btn" style="width: fit-content;" onclick="goBackToStep2()"><i class="fas fa-arrow-left"></i> Back to Courses</button>
+            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 5px;">Select Examination Session</h3>
+            <button class="year-btn btn-nov-25" onclick="selectYear('November 2025')">NEW - NOVEMBER 2025</button>
+            <button class="year-btn btn-apr-25" onclick="selectYear('April 2025')">NEW - APRIL 2025</button>
+            <button class="year-btn btn-nov-24" onclick="selectYear('November 2024')">NEW - NOVEMBER 2024</button>
+        </div>
+
+        <!-- Step 4: Question Papers Table -->
+        <div id="step4" class="table-container">
+            <div style="padding: 15px 20px; background: #fff;">
+                <button class="back-step-btn" style="margin-bottom: 0;" onclick="goBackToStep3()"><i class="fas fa-arrow-left"></i> Back to Sessions</button>
+            </div>
+            <div class="table-header-info" id="tableInfo">
+                Graduation: UG | Course Name: B.Sc. Chemistry | Session: November 2025
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Year / Session</th>
+                        <th>Subject Code</th>
+                        <th>Subject Title</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Dynamic Data -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Merit Arts and Science College, Idaikal, Ambasamudram. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let selectedStream = "";
+        let selectedCourseName = "";
+
+        const coursesData = {
+            'Science': ['B.Sc. Computer Science', 'B.Sc. Chemistry', 'B.Sc. Physics', 'B.Sc. Mathematics', 'B.Sc. Artificial Intelligence and Data Science'],
+            'Arts': ['B.A. English', 'B.A. Tamil', 'B.A. History'],
+            'Commerce': ['B.Com.', 'B.Com. Computer Applications', 'B.B.A.'],
+            'Common': ['Tamil - Part I', 'English - Part II', 'Environmental Studies', 'Value Education']
+        };
+
+        function selectCategory(stream) {
+            selectedStream = stream;
+            document.getElementById('step1').style.display = 'none';
+            let courseDiv = document.getElementById('step2');
+            courseDiv.style.display = 'block';
+            
+            let container = document.getElementById('courseItemsContainer');
+            container.innerHTML = '';
+            
+            coursesData[stream].forEach(course => {
+                let div = document.createElement('div');
+                div.className =/course-item/;
+                div.innerHTML = `${course} <i class="fas fa-chevron-right" style="color: var(--secondary);"></i>`;
+                div.onclick = () => selectCourse(course);
+                container.appendChild(div);
+            });
+        }
+
+        function selectCourse(course) {
+            selectedCourseName = course;
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('step3').style.display = 'flex';
+        }
+
+        function selectYear(yearSession) {
+            document.getElementById('step3').style.display = 'none';
+            let tableContainer = document.getElementById('step4');
+            tableContainer.style.display = 'block';
+
+            document.getElementById('tableInfo').innerHTML = `Graduation: UG &nbsp;|&nbsp; Course: <b>${selectedCourseName}</b> &nbsp;|&nbsp; Session: <b>${yearSession}</b>`;
+
+            let tbody = document.getElementById('tableBody');
+            tbody.innerHTML = `
+                <tr>
+                    <td>1</td>
+                    <td>${yearSession}</td>
+                    <td>SUB101</td>
+                    <td>Core Paper I - Fundamentals</td>
+                    <td><a href="pdf/sample1.pdf" target="_blank" class="download-btn"><i class="fas fa-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>${yearSession}</td>
+                    <td>SUB102</td>
+                    <td>Core Paper II - Advanced Concepts</td>
+                    <td><a href="pdf/sample2.pdf" target="_blank" class="download-btn"><i class="fas fa-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>${yearSession}</td>
+                    <td>ALL103</td>
+                    <td>Allied / Ancillary Paper</td>
+                    <td><a href="pdf/sample3.pdf" target="_blank" class="download-btn"><i class="fas fa-download"></i> Download</a></td>
+                </tr>
+            `;
+        }
+
+        function goBackToStep1() {
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('step1').style.display = 'block';
+        }
+
+        function goBackToStep2() {
+            document.getElementById('step3').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        }
+
+        function goBackToStep3() {
+            document.getElementById('step4').style.display = 'none';
+            document.getElementById('step3').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

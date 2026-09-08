@@ -42,31 +42,24 @@
             background: #ffffff; border-radius: 50%; border: 2px solid var(--secondary); overflow: hidden; flex-shrink: 0;
             transition: transform 0.4s ease;
         }
-        .logo-container:hover { transform: rotate(360deg); }
-        .logo-container img { width: 100%; height: 100%; object-fit: contain; }
-
-        .brand-text h1 { font-size: 1.4rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
+        .logo-container img { width: 100%; height: 100%; object-fit: contain; }.brand-text h1 { font-size: 1.4rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
         .brand-text p { font-size: 0.8rem; color: var(--secondary); font-weight: 600; }
-
         .btn-accent {
             background-color: var(--accent); color: var(--primary); padding: 10px 22px;
             border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s;
             box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
         }
         .btn-accent:hover { background-color: var(--primary); color: var(--accent); transform: translateY(-3px) scale(1.05); }
-
         .nav-bar { background-color: var(--primary); overflow: hidden; white-space: nowrap; }
         .nav-menu-wrapper { display: flex; overflow: hidden; white-space: nowrap; }
         .nav-menu { display: flex; list-style: none; gap: 15px; padding: 0; margin: 0;}
         @keyframes scrollNav { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .nav-bar:hover .nav-menu { animation-play-state: paused; }
-
         .nav-link {
             display: inline-block; padding: 14px 18px; color: var(--white); text-decoration: none;
             font-size: 0.88rem; font-weight: 600; text-transform: uppercase; white-space: nowrap; transition: 0.3s;
         }
         .nav-link:hover { color: var(--accent); background: rgba(255,255,255,0.12); border-radius: 4px; }
-
         /* Hero Section */
         .hero-section {
             position: relative; min-height: 520px;
@@ -76,7 +69,6 @@
         .hero-subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 700; margin-bottom: 10px; text-transform: uppercase; }
         .hero-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
         .hero-motto { font-size: 1.3rem; font-style: italic; color: #e0f2fe; margin-bottom: 25px; font-weight: 600; }
-
         /* Stats Counter Section */
         .stats-section {
             background: var(--white); margin-top: -40px; position: relative; z-index: 10;
@@ -89,7 +81,6 @@
         .stat-icon { font-size: 2.2rem; color: var(--secondary); margin-bottom: 8px; }
         .counter-value { font-size: 2.2rem; font-weight: 800; color: var(--primary); display: block; }
         .stat-label { font-size: 0.8rem; font-weight: 700; color: #666; text-transform: uppercase; }
-
         .section { padding: 60px 20px; }
         .section-bg { background-color: var(--light); }
         .container { max-width: 1280px; margin: 0 auto; }
@@ -169,7 +160,6 @@
             </a>
             <a href="admission.html" class="btn-accent"><i class="fas fa-sparkles"></i> Join Now 2026</a>
         </div>
-
         <nav class="nav-bar">
             <div class="nav-menu-wrapper">
                 <ul class="nav-menu">
@@ -186,7 +176,6 @@
             </div>
         </nav>
     </header>
-
     <section class="hero-section" id="home">
         <div>
             <p class="hero-subtitle">Empowering Young Minds For A Better Tomorrow</p>
@@ -195,6 +184,477 @@
             <a href="admission.html" class="btn-accent" style="font-size:1rem; padding: 12px 28px;">ADMISSION 2026 - 2027</a>
         </div>
     </section>
+<style>
+/* Styling for Merit Institutions Section */
+.institutions-banner {
+    background: linear-gradient(135deg, #002b49, #0077b6);
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.institutions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.institutions-banner h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.institutions-banner p {
+    font-size: 14px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+.institutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.inst-card {
+    background: #ffffff;
+    color: #333;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    text-align: left;
+    transition: transform 0.3s ease;
+    border-top: 4px solid #ffb703; /* கோல்டன் டச் */
+}
+.inst-card:hover {
+    transform: translateY(-5px);
+}
+.inst-card h3 {
+    font-size: 18px;
+    color: #002b49;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.inst-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.inst-btn {
+    display: inline-block;
+    background: #002b49;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.inst-btn:hover {
+    background: #ffb703;
+    color: #002b49;
+}
+</style>
+    <!-- Departments / Programs Section Start -->
+<section class="chronicles-container">
+    <div class="chronicles-header">
+        <div class="title-area">
+            <span class="icon">🎓</span>
+            <h2>CHRONICLES</h2>
+            <p>Explore our wide range of academic courses.</p>
+        </div>
+        <a href="all-departments.html" class="view-all">View All Departments &gt;</a>
+    </div>
+
+    <div class="chronicles-grid">
+        
+        <!-- Department 1: Computer Science -->
+        <div class="chronicle-card">
+            <div class="card-img-box">
+                <img src="techfest.jpg" alt="B.Sc Computer Science">
+                <span class="date-badge">UG</span>
+            </div>
+            <div class="card-content">
+                <h3>B.Sc. Computer Science</h3>
+                <p>Build a strong foundation in programming, software, and technology.</p>
+                <a href="cs-dept.html" class="read-more">Explore &rarr;</a>
+            </div>
+        </div>
+        <!-- B.Sc. Chemistry Card Start (Exact Box Size matched with other cards) -->
+<div class="dept-card chem-main-card">
+    <div class="chem-slider-container">
+        <img src="chem-1.jpg" class="chem-slide active" alt="Chemistry Lab 1">
+        <img src="chem-2.jpg" class="chem-slide" alt="Chemistry Lab 2">
+        <img src="chem-3.jpg" class="chem-slide" alt="Chemistry Lab 3">
+        <img src="chem-4.jpg" class="chem-slide" alt="Chemistry Lab 4">
+        <img src="chem-5.jpg" class="chem-slide" alt="Chemistry Lab 5">
+        <img src="chem-6.jpg" class="chem-slide" alt="Chemistry Lab 6">
+        <img src="chem-7.jpg" class="chem-slide" alt="Chemistry Lab 7">
+        <img src="chem-8.jpg" class="chem-slide" alt="Chemistry Lab 8">
+        <img src="chem-9.jpg" class="chem-slide" alt="Chemistry Lab 9">
+        <img src="chem-10.jpg" class="chem-slide" alt="Chemistry Lab 10">
+        <span class="chem-ug-badge">UG</span>
+    </div>
+    <div class="chem-card-content">
+        <h3>B.Sc. Chemistry</h3>
+        <p>Discover the wonders of chemical sciences and laboratory research.</p>
+<div class="card">
+    <div class="card-image-slider">
+    </div>
+    <a href="chemistry_magazine.html" class="explore-btn">Explore -></a>
+</div>
+    </div>
+</div>
+<!-- B.Sc. Chemistry Card End -->
+<style>
+/* Exact Matching Card Style */
+.chem-main-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px; /* மற்ற கார்டுகளின் அளவுக்குச் சமமாக */
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+.chem-main-card:hover {
+    transform: translateY(-4px);
+}
+.chem-slider-container {
+    position: relative;
+    width: 100%;
+    height: 160px; /* பாக்ஸுக்குள் அடங்கும் சரியான உயரம் */
+    overflow: hidden;
+    background: #002b49;
+}
+.chem-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.chem-slide.active {
+    opacity: 1;
+}
+.chem-ug-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 10;
+}
+.chem-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.chem-card-content h3 {
+    font-size: 16px;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.chem-card-content p {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+.chem-learn-more {
+    margin-top: auto;
+    color: #0284c7;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+.chem-learn-more:hover {
+    text-decoration: underline;
+}
+</style>
+
+<script>
+/* Auto Slider Script inside the small box */
+let activeChemSlide = 0;
+const allChemSlides = document.querySelectorAll('.chem-slide');
+
+function runChemSlider() {
+    if(allChemSlides.length === 0) return;
+    allChemSlides[activeChemSlide].classList.remove('active');
+    activeChemSlide = (activeChemSlide + 1) % allChemSlides.length;
+    allChemSlides[activeChemSlide].classList.add('active');
+}
+
+setInterval(runChemSlider, 3000);
+</script>
+        <!-- Department 3: Maths -->
+        <div class="chronicle-card">
+            <div class="card-img-box">
+                <img src="exam.jpg" alt="B.Sc Maths">
+                <span class="date-badge">UG</span>
+            </div>
+            <div class="card-content">
+                <h3>B.Sc. Maths</h3>
+                <p>Enhance analytical thinking and logical problem-solving skills.</p>
+                <a href="maths-dept.html" class="read-more">Explore &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Department 4: English -->
+        <div class="chronicle-card">
+            <div class="card-img-box">
+                <img src="cultural.jpg" alt="B.A English">
+                <span class="date-badge">UG</span>
+            </div>
+            <div class="card-content">
+                <h3>B.A. English</h3>
+                <p>Master communication, literature, and linguistic expertise.</p>
+                <a href="english-dept.html" class="read-more">Explore &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Department 5: Physics (Newly Added) -->
+        <div class="chronicle-card">
+            <div class="card-img-box">
+                <img src="techfest.jpg" alt="B.Sc Physics">
+                <span class="date-badge">UG</span>
+            </div>
+            <div class="card-content">
+                <h3>B.Sc. Physics</h3>
+                <p>Explore the laws of nature, matter, energy, and the universe.</p>
+                <a href="physics-dept.html" class="read-more">Explore &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Departments Section End -->
+
+<style>
+/* Styling for Departments Grid */
+.chronicles-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.chronicles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.title-area h2 {
+    font-size: 22px;
+    color: #002b49;
+    font-weight: 700;
+}
+.title-area p {
+    font-size: 14px;
+    color: #555;
+    margin-left: 15px;
+    border-left: 2px solid #0077b6;
+    padding-left: 15px;
+}
+.view-all {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+.view-all:hover {
+    color: #002b49;
+    text-decoration: underline;
+}
+.chronicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.chronicle-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+.chronicle-card:hover {
+    transform: translateY(-5px);
+}
+.card-img-box {
+    position: relative;
+    height: 140px;
+}
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.date-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #002b49;
+    color: #fff;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 2px solid #ffb703;
+}
+.card-content {
+    padding: 15px;
+}
+.card-content h3 {
+    font-size: 15px;
+    color: #002b49;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.card-content p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.read-more {
+    color: #0077b6;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+</style>
+
+<style>
+/* Blue Theme Chronicles Styling */
+.chronicles-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.chronicles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.title-area h2 {
+    font-size: 22px;
+    color: #002b49; /* காலேஜ் ப்ளூ கலர் */
+    font-weight: 700;
+}
+.title-area p {
+    font-size: 14px;
+    color: #555;
+    margin-left: 15px;
+    border-left: 2px solid #0077b6;
+    padding-left: 15px;
+}
+.view-all {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+.view-all:hover {
+    color: #002b49;
+    text-decoration: underline;
+}
+.chronicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+.chronicle-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chronicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,43,73,0.12);
+}
+.card-img-box {
+    position: relative;
+    height: 160px;
+}
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.date-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #002b49; /* ப்ளூ தீம் டேட் பேட்ஜ் */
+    color: #fff;
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.2;
+    border-bottom: 2px solid #ffb703; /* கோல்டன் டச் */
+}
+.card-content {
+    padding: 18px;
+}
+.card-content h3 {
+    font-size: 16px;
+    color: #002b49;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.card-content p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+.read-more {
+    color: #0077b6;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+.read-more:hover {
+    color: #002b49;
+    text-decoration: underline;
+}
+</style>
 
     <section class="stats-section">
         <div class="stats-grid">
@@ -610,5 +1070,215 @@ At Merit, every student is treated not just as a learner, but as a future leader
     <!-- Botpress AI Scripts -->
     <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2026/08/01/14/20260801141608-Q0CODS9D.js" defer></script>
+    <!-- Floating Admissions Box (Right Side) Start -->
+<div class="floating-admissions-box">
+    <div class="pulse-glow-header">🎓 Merit Group Admissions</div>
+    <div class="admissions-links">
+        <a href="polytechnic-admissions.html" class="blink-btn poly-btn">
+            <span>🔥</span> Merit Polytechnic Admission
+        </a>
+        <a href="bed-admissions.html" class="blink-btn bed-btn">
+            <span>✨</span> Merit B.Ed College Admission
+        </a>
+    </div>
+</div>
+<!-- Single Poster Popup Start -->
+<div id="admissionPopup" class="popup-overlay">
+    <div class="single-poster-box">
+        <!-- Close Button ('X') -->
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        
+        <!-- ஒரே போஸ்டர் படம் -->
+        <div class="poster-image-wrapper">
+            <img src="admission-poster.jpg" alt="Merit Institutions Admissions Poster">
+        </div>
+        
+        <!-- கீழே ஒரு அப்ளை பட்டன் (தேவைப்பட்டால் கிளிக் செய்து கொள்ளலாம்) -->
+        <div class="poster-action-bar">
+            <a href="admissions.html" class="popup-apply-btn">Proceed to Admissions</a>
+        </div>
+    </div>
+</div>
+<!-- Single Poster Popup End -->
+
+<style>
+/* Background Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Single Poster Box */
+.single-poster-box {
+    background: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Close Button */
+.close-popup {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 28px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.close-popup:hover {
+    background: #ff0000;
+}
+
+/* Image Wrapper */
+.poster-image-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.poster-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Action Bar */
+.poster-action-bar {
+    margin-top: 15px;
+}
+
+.popup-apply-btn {
+    display: inline-block;
+    background: #002b49;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 2px solid #ffb703;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.popup-apply-btn:hover {
+    background: #0077b6;
+    transform: translateY(-2px);
+}
+</style>
+
+<script>
+/* Function to close popup */
+function closePopup() {
+    document.getElementById('admissionPopup').style.display = 'none';
+}
+</script>
+<!-- Floating Admissions Box End -->
+
+<style>
+/* Floating Box Styling for Right Side */
+.floating-admissions-box {
+    position: fixed;
+    top: 35%;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(0, 43, 73, 0.95);
+    backdrop-filter: blur(8px);
+    border: 2px solid #ffb703;
+    padding: 15px;
+    border-radius: 14px;
+    width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    animation: floatBox 3s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.pulse-glow-header {
+    color: #ffb703;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admissions-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Blinking & Glowing Button Effects */
+.blink-btn {
+    display: block;
+    background: #ffffff;
+    color: #002b49;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(255, 183, 3, 0.6);
+    animation: glowBlink 1.5s infinite alternate;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.blink-btn:hover {
+    transform: scale(1.05);
+    background: #ffb703;
+    color: #002b49;
+}
+
+@keyframes glowBlink {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 183, 3, 0.4);
+        border-color: #ffb703;
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 183, 3, 1), 0 0 25px rgba(0, 119, 182, 0.8);
+        border-color: #ffffff;
+    }
+}
+</style>
 </body>
 </html>

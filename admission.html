@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #002b49; --secondary: #0077b6; --accent: #ffb703; --light: #f8fafc; --white: #ffffff; --text-dark: #2b2d42; --border-color: #cbd5e1; }
+        :root { --primary: #002b49; --secondary: #0077b6; --accent: #ffb703; --light: #f8fafc; --white: #ffffff; --text-dark: #2b2d42; --border-color: #cbd5e1; --success: #16a34a; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--light); color: var(--text-dark); line-height: 1.6; }
         header { background: var(--white); box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
@@ -17,7 +17,87 @@
         .logo-container img { width: 100%; height: 100%; object-fit: contain; }
         .brand-text h1 { font-size: 1.3rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
         .brand-text p { font-size: 0.8rem; color: var(--secondary); font-weight: 600; }
-        .form-section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        
+        .back-home-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0, 43, 73, 0.2);
+            transition: background 0.2s;
+        }
+        .back-home-btn:hover { background-color: var(--secondary); }
+
+        .form-section { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        
+        /* Progress Bar with Connecting Lines */
+        .progress-bar-container {
+            background: var(--white);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .progress-bar-container::before {
+            content: '';
+            position: absolute;
+            top: 42px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .progress-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+        .progress-step .step-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 auto 6px auto;
+            transition: all 0.3s ease;
+            border: 3px solid var(--white);
+        }
+        .progress-step.active .step-icon {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(255, 183, 3, 0.2);
+        }
+        .progress-step.completed .step-icon {
+            background: var(--success);
+            color: var(--white);
+        }
+        .progress-step span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+        .progress-step.active span { color: var(--primary); font-weight: 700; }
+        .progress-step.completed span { color: var(--success); font-weight: 700; }
+
         .form-card { background: var(--white); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; border-top: 6px solid var(--accent); }
         .form-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--white); padding: 30px 20px; text-align: center; }
         .form-header h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 5px; color: var(--accent); text-transform: uppercase; }
@@ -47,6 +127,9 @@
                     <p>Idaikal, Ambasamudram</p>
                 </div>
             </a>
+            <a href="homee.html" class="back-home-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
         </div>
     </header>
     
@@ -56,23 +139,47 @@
                 <h2> Merit Arts & Science College </h2>
                 <p>Online Admission Form</p>
             </div>
+            
             <div class="form-body">
+                
+                <div class="progress-bar-container">
+                    <div class="progress-step active" id="step-ind-1">
+                        <div class="step-icon" id="icon-1">1</div>
+                        <span>Personal Details</span>
+                    </div>
+                    <div class="progress-step" id="step-ind-2">
+                        <div class="step-icon" id="icon-2">2</div>
+                        <span>Parent Details</span>
+                    </div>
+                    <div class="progress-step" id="step-ind-3">
+                        <div class="step-icon" id="icon-3">3</div>
+                        <span>Academic Details</span>
+                    </div>
+                    <div class="progress-step" id="step-ind-4">
+                        <div class="step-icon" id="icon-4">4</div>
+                        <span>Course Details</span>
+                    </div>
+                    <div class="progress-step" id="step-ind-5">
+                        <div class="step-icon" id="icon-5">5</div>
+                        <span>Documents Details</span>
+                    </div>
+                </div>
+
                 <form action="https://formsubmit.co/arunavathi1007email@gmail.com" method="POST" enctype="multipart/form-data">
-                </form>
                     
                     <div class="form-group-title">1. Student Personal Details</div>
                     <div class="form-grid">
                         <div class="form-control">
                             <label>Student Full Name <span>*</span></label>
-                            <input type="text" name="student_name" required placeholder="Enter full name">
+                            <input type="text" id="p_name" name="student_name" required placeholder="Enter full name">
                         </div>
                         <div class="form-control">
                             <label>Date of Birth <span>*</span></label>
-                            <input type="date" name="dob" required>
+                            <input type="date" id="p_dob" name="dob" required>
                         </div>
                         <div class="form-control">
                             <label>Gender <span>*</span></label>
-                            <select name="gender" required>
+                            <select id="p_gender" name="gender" required>
                                 <option value="">-- Select Gender --</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -81,7 +188,7 @@
                         </div>
                         <div class="form-control">
                             <label>Community <span>*</span></label>
-                            <select name="community" required>
+                            <select id="p_community" name="community" required>
                                 <option value="">-- Select Community --</option>
                                 <option value="bc">BC</option>
                                 <option value="mbc">MBC</option>
@@ -93,11 +200,11 @@
                         </div>
                         <div class="form-control">
                             <label>Student Mobile Number <span>*</span></label>
-                            <input type="tel" name="student_mobile" required placeholder="10-digit mobile number">
+                            <input type="tel" id="p_mobile" name="student_mobile" required placeholder="10-digit mobile number">
                         </div>
                         <div class="form-control">
                             <label>Email Address <span>*</span></label>
-                            <input type="email" name="email" required placeholder="name@example.com">
+                            <input type="email" id="p_email" name="email" required placeholder="name@example.com">
                         </div>
                     </div>
 
@@ -105,19 +212,19 @@
                     <div class="form-grid">
                         <div class="form-control">
                             <label>Father's Name <span>*</span></label>
-                            <input type="text" name="father_name" required placeholder="Father's name">
+                            <input type="text" id="par_fname" name="father_name" required placeholder="Father's name">
                         </div>
                         <div class="form-control">
                             <label>Father's Occupation</label>
-                            <input type="text" name="father_occupation" placeholder="Occupation">
+                            <input type="text" id="par_focc" name="father_occupation" placeholder="Occupation">
                         </div>
                         <div class="form-control">
                             <label>Mother's Name</label>
-                            <input type="text" name="mother_name" placeholder="Mother's name">
+                            <input type="text" id="par_mname" name="mother_name" placeholder="Mother's name">
                         </div>
                         <div class="form-control">
                             <label>Parent Mobile Number <span>*</span></label>
-                            <input type="tel" name="parent_mobile" required placeholder="Contact number">
+                            <input type="tel" id="par_pmobile" name="parent_mobile" required placeholder="Contact number">
                         </div>
                     </div>
 
@@ -125,15 +232,15 @@
                     <div class="form-grid">
                         <div class="form-control full-width">
                             <label>Residential Address <span>*</span></label>
-                            <textarea name="address" rows="2" required placeholder="Door No, Street, City"></textarea>
+                            <textarea id="acad_addr" name="address" rows="2" required placeholder="Door No, Street, City"></textarea>
                         </div>
                         <div class="form-control">
                             <label>District <span>*</span></label>
-                            <input type="text" name="district" required placeholder="District">
+                            <input type="text" id="acad_dist" name="district" required placeholder="District">
                         </div>
                         <div class="form-control">
                             <label>Pincode <span>*</span></label>
-                            <input type="text" name="pincode" required placeholder="Pincode">
+                            <input type="text" id="acad_pin" name="pincode" required placeholder="Pincode">
                         </div>
                         <div class="form-control">
                             <label>10th Total Mark (Out of 500) <span>*</span></label>
@@ -157,7 +264,7 @@
                     <div class="form-grid">
                         <div class="form-control full-width">
                             <label>Select Desired Course <span>*</span></label>
-                            <select name="selected_course" required>
+                            <select id="course_select" name="selected_course" required>
                                 <option value="">-- Choose Course --</option>
                                 <option value="B.Sc Computer Science">B.Sc Computer Science</option>
                                 <option value="B.Sc Artificial Intelligence and Data Science">B.Sc Artificial Intelligence and Data Science</option>
@@ -174,25 +281,25 @@
                     <div class="upload-grid">
                         <div class="upload-box">
                             <label>10th Mark Sheet <span>*</span></label>
-                            <input type="file" name="doc_10th" accept=".pdf, .jpg, .jpeg, .png" required>
+                            <input type="file" id="doc_1" name="doc_10th" accept=".pdf, .jpg, .jpeg, .png" required>
                         </div>
                         <div class="upload-box">
                             <label>12th Mark Sheet <span>*</span></label>
-                            <input type="file" name="doc_12th" accept=".pdf, .jpg, .jpeg, .png" required>
+                            <input type="file" id="doc_2" name="doc_12th" accept=".pdf, .jpg, .jpeg, .png" required>
                         </div>
                         <div class="upload-box">
                             <label>Transfer Certificate (TC) <span>*</span></label>
-                            <input type="file" name="doc_tc" accept=".pdf, .jpg, .jpeg, .png" required>
+                            <input type="file" id="doc_3" name="doc_tc" accept=".pdf, .jpg, .jpeg, .png" required>
                         </div>
                         <div class="upload-box">
                             <label>Community Certificate <span>*</span></label>
-                            <input type="file" name="doc_community" accept=".pdf, .jpg, .jpeg, .png" required>
+                            <input type="file" id="doc_4" name="doc_community" accept=".pdf, .jpg, .jpeg, .png" required>
                         </div>
                     </div>
                     <div class="form-grid">
                         <div class="form-control full-width upload-box">
                             <label>Income Certificate <span>*</span></label>
-                            <input type="file" name="doc_income" accept=".pdf, .jpg, .jpeg, .png" required>
+                            <input type="file" id="doc_5" name="doc_income" accept=".pdf, .jpg, .jpeg, .png" required>
                         </div>
                     </div>
 
@@ -211,29 +318,94 @@
         <p>&copy; 2026 Merit Arts and Science College, Idaikal, Ambasamudram. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for Auto Percentage Calculation -->
     <script>
         function calc10() {
             let m = parseFloat(document.getElementById('mark10').value);
             let p = document.getElementById('per10');
             if (!isNaN(m)) {
-                let percentage = (m / 500) * 100;
-                p.value = percentage.toFixed(2) + "%";
+                p.value = ((m / 500) * 100).toFixed(2) + "%";
             } else {
                 p.value = "";
             }
+            checkAllSections();
         }
 
         function calc12() {
             let m = parseFloat(document.getElementById('mark12').value);
             let p = document.getElementById('per12');
             if (!isNaN(m)) {
-                let percentage = (m / 600) * 100;
-                p.value = percentage.toFixed(2) + "%";
+                p.value = ((m / 600) * 100).toFixed(2) + "%";
             } else {
                 p.value = "";
             }
+            checkAllSections();
         }
+
+        const step1Fields = ['p_name', 'p_dob', 'p_gender', 'p_community', 'p_mobile', 'p_email'];
+        const step2Fields = ['par_fname', 'par_pmobile'];
+        const step3Fields = ['acad_addr', 'acad_dist', 'acad_pin', 'mark10', 'mark12'];
+        const step4Fields = ['course_select'];
+        const step5Fields = ['doc_1', 'doc_2', 'doc_3', 'doc_4', 'doc_5'];
+
+        const allInputs = [...step1Fields, ...step2Fields, ...step3Fields, ...step4Fields, ...step5Fields];
+        allInputs.forEach(id => {
+            let el = document.getElementById(id);
+            if(el) {
+                el.addEventListener('input', checkAllSections);
+                el.addEventListener('change', checkAllSections);
+            }
+        });
+
+        function isSectionFilled(fields) {
+            return fields.every(id => {
+                let el = document.getElementById(id);
+                if (!el) return false;
+                if (el.type === 'file') {
+                    return el.files.length > 0;
+                }
+                return el.value.trim() !== "";
+            });
+        }
+
+        function checkAllSections() {
+            let s1 = isSectionFilled(step1Fields);
+            let s2 = isSectionFilled(step2Fields);
+            let s3 = isSectionFilled(step3Fields);
+            let s4 = isSectionFilled(step4Fields);
+            let s5 = isSectionFilled(step5Fields);
+
+            updateStepUI(1, s1, s2 || s1);
+            updateStepUI(2, s2, s3 || s2);
+            updateStepUI(3, s3, s4 || s3);
+            updateStepUI(4, s4, s5 || s4);
+            updateStepUI(5, s5, false);
+        }
+
+        function updateStepUI(stepNum, isCompleted, isActiveOrNext) {
+            let stepEl = document.getElementById(`step-ind-${stepNum}`);
+            let iconEl = document.getElementById(`icon-${stepNum}`);
+
+            if (isCompleted) {
+                stepEl.className = 'progress-step completed';
+                iconEl.innerHTML = '<i class="fas fa-check"></i>';
+            } else if (isActiveOrNext && (stepNum === 1 || isPreviousCompleted(stepNum))) {
+                stepEl.className = 'progress-step active';
+                iconEl.innerHTML = stepNum;
+            } else {
+                stepEl.className = 'progress-step';
+                iconEl.innerHTML = stepNum;
+            }
+        }
+
+        function isPreviousCompleted(currentStep) {
+            if (currentStep === 2) return isSectionFilled(step1Fields);
+            if (currentStep === 3) return isSectionFilled(step1Fields) && isSectionFilled(step2Fields);
+            if (currentStep === 4) return isSectionFilled(step1Fields) && isSectionFilled(step2Fields) && isSectionFilled(step3Fields);
+            if (currentStep === 5) return isSectionFilled(step1Fields) && isSectionFilled(step2Fields) && isSectionFilled(step3Fields) && isSectionFilled(step4Fields);
+            return false;
+        }
+
+        checkAllSections();
     </script>
 </body>
 </html>
