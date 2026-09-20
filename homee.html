@@ -254,406 +254,7 @@
     color: #002b49;
 }
 </style>
-    <!-- Departments / Programs Section Start -->
-<section class="chronicles-container">
-    <div class="chronicles-header">
-        <div class="title-area">
-            <span class="icon">🎓</span>
-            <h2>CHRONICLES</h2>
-            <p>Explore our wide range of academic courses.</p>
-        </div>
-        <a href="all-departments.html" class="view-all">View All Departments &gt;</a>
-    </div>
 
-    <div class="chronicles-grid">
-        
-        <!-- Department 1: Computer Science -->
-        <div class="chronicle-card">
-            <div class="card-img-box">
-                <img src="techfest.jpg" alt="B.Sc Computer Science">
-                <span class="date-badge">UG</span>
-            </div>
-            <div class="card-content">
-                <h3>B.Sc. Computer Science</h3>
-                <p>Build a strong foundation in programming, software, and technology.</p>
-                <a href="cs-dept.html" class="read-more">Explore &rarr;</a>
-            </div>
-        </div>
-        <!-- B.Sc. Chemistry Card Start (Exact Box Size matched with other cards) -->
-<div class="dept-card chem-main-card">
-    <div class="chem-slider-container">
-        <img src="chem-1.jpg" class="chem-slide active" alt="Chemistry Lab 1">
-        <img src="chem-2.jpg" class="chem-slide" alt="Chemistry Lab 2">
-        <img src="chem-3.jpg" class="chem-slide" alt="Chemistry Lab 3">
-        <img src="chem-4.jpg" class="chem-slide" alt="Chemistry Lab 4">
-        <img src="chem-5.jpg" class="chem-slide" alt="Chemistry Lab 5">
-        <img src="chem-6.jpg" class="chem-slide" alt="Chemistry Lab 6">
-        <img src="chem-7.jpg" class="chem-slide" alt="Chemistry Lab 7">
-        <img src="chem-8.jpg" class="chem-slide" alt="Chemistry Lab 8">
-        <img src="chem-9.jpg" class="chem-slide" alt="Chemistry Lab 9">
-        <img src="chem-10.jpg" class="chem-slide" alt="Chemistry Lab 10">
-        <span class="chem-ug-badge">UG</span>
-    </div>
-    <div class="chem-card-content">
-        <h3>B.Sc. Chemistry</h3>
-        <p>Discover the wonders of chemical sciences and laboratory research.</p>
-<div class="card">
-    <div class="card-image-slider">
-    </div>
-    <a href="chemistry_magazine.html" class="explore-btn">Explore -></a>
-</div>
-    </div>
-</div>
-<!-- B.Sc. Chemistry Card End -->
-<style>
-/* Exact Matching Card Style */
-.chem-main-card {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #eaeaea;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px; /* மற்ற கார்டுகளின் அளவுக்குச் சமமாக */
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-.chem-main-card:hover {
-    transform: translateY(-4px);
-}
-.chem-slider-container {
-    position: relative;
-    width: 100%;
-    height: 160px; /* பாக்ஸுக்குள் அடங்கும் சரியான உயரம் */
-    overflow: hidden;
-    background: #002b49;
-}
-.chem-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.chem-slide.active {
-    opacity: 1;
-}
-.chem-ug-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #1e293b;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 4px;
-    z-index: 10;
-}
-.chem-card-content {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-.chem-card-content h3 {
-    font-size: 16px;
-    color: #1e293b;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-.chem-card-content p {
-    font-size: 12px;
-    color: #64748b;
-    margin-bottom: 14px;
-    line-height: 1.4;
-}
-.chem-learn-more {
-    margin-top: auto;
-    color: #0284c7;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-}
-.chem-learn-more:hover {
-    text-decoration: underline;
-}
-</style>
-
-<script>
-/* Auto Slider Script inside the small box */
-let activeChemSlide = 0;
-const allChemSlides = document.querySelectorAll('.chem-slide');
-
-function runChemSlider() {
-    if(allChemSlides.length === 0) return;
-    allChemSlides[activeChemSlide].classList.remove('active');
-    activeChemSlide = (activeChemSlide + 1) % allChemSlides.length;
-    allChemSlides[activeChemSlide].classList.add('active');
-}
-
-setInterval(runChemSlider, 3000);
-</script>
-        <!-- Department 3: Maths -->
-        <div class="chronicle-card">
-            <div class="card-img-box">
-                <img src="exam.jpg" alt="B.Sc Maths">
-                <span class="date-badge">UG</span>
-            </div>
-            <div class="card-content">
-                <h3>B.Sc. Maths</h3>
-                <p>Enhance analytical thinking and logical problem-solving skills.</p>
-                <a href="maths-dept.html" class="read-more">Explore &rarr;</a>
-            </div>
-        </div>
-
-        <!-- Department 4: English -->
-        <div class="chronicle-card">
-            <div class="card-img-box">
-                <img src="cultural.jpg" alt="B.A English">
-                <span class="date-badge">UG</span>
-            </div>
-            <div class="card-content">
-                <h3>B.A. English</h3>
-                <p>Master communication, literature, and linguistic expertise.</p>
-                <a href="english-dept.html" class="read-more">Explore &rarr;</a>
-            </div>
-        </div>
-
-        <!-- Department 5: Physics (Newly Added) -->
-        <div class="chronicle-card">
-            <div class="card-img-box">
-                <img src="techfest.jpg" alt="B.Sc Physics">
-                <span class="date-badge">UG</span>
-            </div>
-            <div class="card-content">
-                <h3>B.Sc. Physics</h3>
-                <p>Explore the laws of nature, matter, energy, and the universe.</p>
-                <a href="physics-dept.html" class="read-more">Explore &rarr;</a>
-            </div>
-        </div>
-
-    </div>
-</section>
-<!-- Departments Section End -->
-
-<style>
-/* Styling for Departments Grid */
-.chronicles-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    font-family: 'Poppins', sans-serif;
-}
-.chronicles-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-.title-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.title-area h2 {
-    font-size: 22px;
-    color: #002b49;
-    font-weight: 700;
-}
-.title-area p {
-    font-size: 14px;
-    color: #555;
-    margin-left: 15px;
-    border-left: 2px solid #0077b6;
-    padding-left: 15px;
-}
-.view-all {
-    color: #0077b6;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-}
-.view-all:hover {
-    color: #002b49;
-    text-decoration: underline;
-}
-.chronicles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-.chronicle-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s ease;
-}
-.chronicle-card:hover {
-    transform: translateY(-5px);
-}
-.card-img-box {
-    position: relative;
-    height: 140px;
-}
-.card-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.date-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #002b49;
-    color: #fff;
-    padding: 4px 8px;
-    text-align: center;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: 2px solid #ffb703;
-}
-.card-content {
-    padding: 15px;
-}
-.card-content h3 {
-    font-size: 15px;
-    color: #002b49;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-.card-content p {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-.read-more {
-    color: #0077b6;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-}
-.read-more:hover {
-    text-decoration: underline;
-}
-</style>
-
-<style>
-/* Blue Theme Chronicles Styling */
-.chronicles-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    font-family: 'Poppins', sans-serif;
-}
-.chronicles-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-.title-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.title-area h2 {
-    font-size: 22px;
-    color: #002b49; /* காலேஜ் ப்ளூ கலர் */
-    font-weight: 700;
-}
-.title-area p {
-    font-size: 14px;
-    color: #555;
-    margin-left: 15px;
-    border-left: 2px solid #0077b6;
-    padding-left: 15px;
-}
-.view-all {
-    color: #0077b6;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: color 0.2s;
-}
-.view-all:hover {
-    color: #002b49;
-    text-decoration: underline;
-}
-.chronicles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-.chronicle-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.chronicle-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,43,73,0.12);
-}
-.card-img-box {
-    position: relative;
-    height: 160px;
-}
-.card-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.date-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: #002b49; /* ப்ளூ தீம் டேட் பேட்ஜ் */
-    color: #fff;
-    padding: 6px 10px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 1.2;
-    border-bottom: 2px solid #ffb703; /* கோல்டன் டச் */
-}
-.card-content {
-    padding: 18px;
-}
-.card-content h3 {
-    font-size: 16px;
-    color: #002b49;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-.card-content p {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-.read-more {
-    color: #0077b6;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-}
-.read-more:hover {
-    color: #002b49;
-    text-decoration: underline;
-}
 </style>
 
     <section class="stats-section">
@@ -785,6 +386,171 @@ setInterval(runChemSlider, 3000);
             </div>
         </div>
     </section>
+    <!-- ========================================== -->
+    <!-- DEPARTMENT CHRONICLES SECTION (START)     -->
+    <!-- ========================================== -->
+    <section id="department-chronicles" style="padding: 50px 20px; background-color: #f8fafc; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.2rem; color: #002b49; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Department Chronicles</h2>
+            <p style="color: #64748b; font-size: 1rem; margin-bottom: 40px;">Explore the vibrant events, milestones, and laboratory activities of our departments.</p>
+
+            <!-- 3 Departments Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                
+                <!-- 1. Computer Science Chronicles -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; border-top: 5px solid #0077b6;">
+                    <div>
+                        <div style="position: relative; background: #1e293b; padding: 10px; border-radius: 8px; height: 240px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img src="cs-1.jpg" class="cs-slide active-slide" alt="CS Event 1" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="cs-2.jpg" class="cs-slide" alt="CS Event 2" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="cs-3.jpg" class="cs-slide" alt="CS Event 3" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="cs-4.jpg" class="cs-slide" alt="CS Event 4" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="cs-5.jpg" class="cs-slide" alt="CS Event 5" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="cs-6.jpg" class="cs-slide" alt="CS Event 5" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                        </div>
+                        <h3 style="color: #002b49; font-size: 1.3rem; margin: 15px 0 10px 0; font-weight: 700;">B.Sc. Computer Science</h3>
+                        <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Showcasing coding hackathons, innovative software exhibitions, and technical symposium highlights.</p>
+                    </div>
+                    <button onclick="openFlipBook('cs')" style="background-color: #0077b6; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s;"><i class="fas fa-book-open"></i> Explore Chronicles</button>
+                </div>
+
+                <!-- 2. Chemistry Chronicles -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; border-top: 5px solid #ffb703;">
+                    <div>
+                        <div style="position: relative; background: #1e293b; padding: 10px; border-radius: 8px; height: 240px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img src="chem-1.jpg" class="chem-slide active-slide" alt="Chem Event 1" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="chem-2.jpg" class="chem-slide" alt="Chem Event 2" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="chem-3.jpg" class="chem-slide" alt="Chem Event 3" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="chem-4.jpg" class="chem-slide" alt="Chem Event 4" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="chem-5.jpg" class="chem-slide" alt="Chem Event 5" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                        </div>
+                        <h3 style="color: #002b49; font-size: 1.3rem; margin: 15px 0 10px 0; font-weight: 700;">B.Sc. Chemistry</h3>
+                        <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Highlighting fascinating laboratory experiments, green chemistry discoveries, and science expos.</p>
+                    </div>
+                    <button onclick="openFlipBook('chem')" style="background-color: #d97706; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s;"><i class="fas fa-book-open"></i> Explore Chronicles</button>
+                </div>
+
+                <!-- 3. Mathematics Chronicles -->
+                <div style="background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; border-top: 5px solid #10b981;">
+                    <div>
+                        <div style="position: relative; background: #1e293b; padding: 10px; border-radius: 8px; height: 240px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img src="math-1.jpg" class="math-slide active-slide" alt="Math Event 1" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="math-2.jpg" class="math-slide" alt="Math Event 2" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="math-3.jpg" class="math-slide" alt="Math Event 3" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="math-4.jpg" class="math-slide" alt="Math Event 4" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                            <img src="math-5.jpg" class="math-slide" alt="Math Event 5" style="max-width: 100%; max-height: 220px; object-fit: contain; border-radius: 4px; display: none;">
+                        </div>
+                        <h3 style="color: #002b49; font-size: 1.3rem; margin: 15px 0 10px 0; font-weight: 700;">B.Sc. Mathematics</h3>
+                        <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Presenting mathematical modeling sessions, logical puzzle competitions, and departmental fests.</p>
+                    </div>
+                    <button onclick="openFlipBook('math')" style="background-color: #059669; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s;"><i class="fas fa-book-open"></i> Explore Chronicles</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FLIP BOOK MODAL OVERLAY -->
+    <div id="flipBookModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: #002b49; width: 100%; max-width: 850px; border-radius: 12px; padding: 25px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); border: 3px solid #ffb703; position: relative; text-align: center;">
+            
+            <!-- Modal Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="merit-logo.png" alt="College Logo" style="height: 40px; width: auto;">
+                    <span id="modalDeptTitle" style="color: white; font-size: 1.2rem; font-weight: 700; text-transform: uppercase;">Merit Arts and Science College</span>
+                </div>
+                <button onclick="closeFlipBook()" style="background: #ef4444; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; font-weight: bold;"><i class="fas fa-times"></i></button>
+            </div>
+
+            <!-- Flip Book Viewer Wrapper -->
+            <div style="background: #1e293b; padding: 15px; border-radius: 8px; min-height: 420px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <img id="modalBookImage" src="" alt="Flip Book Page" style="max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 6px;">
+            </div>
+
+            <!-- Controls & Indicators -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                <button onclick="navigateModalPage(-1)" style="background: #ffb703; color: #002b49; border: none; padding: 10px 20px; font-weight: 700; border-radius: 6px; cursor: pointer;"><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="modalPageIndicator" style="color: white; font-weight: 600; font-size: 1rem;">Page 1 of 5</span>
+                <button onclick="navigateModalPage(1)" style="background: #ffb703; color: #002b49; border: none; padding: 10px 20px; font-weight: 700; border-radius: 6px; cursor: pointer;">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR SLIDER & FLIP BOOK -->
+    <script>
+        // Auto slide preview images on homepage
+        function setupAutoSlide(className) {
+            let slides = document.querySelectorAll('.' + className);
+            let index = 0;
+            setInterval(() => {
+                slides[index].style.display = 'none';
+                index = (index + 1) % slides.length;
+                slides[index].style.display = 'block';
+            }, 3000);
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.cs-slide')[0].style.display = 'block';
+            document.querySelectorAll('.chem-slide')[0].style.display = 'block';
+            document.querySelectorAll('.math-slide')[0].style.display = 'block';
+            setupAutoSlide('cs-slide');
+            setupAutoSlide('chem-slide');
+            setupAutoSlide('math-slide');
+        });
+
+        // Modal Flip Book Logic
+        let activeDeptImages = [];
+        let currentModalIndex = 0;
+        let currentDeptName = "";
+
+        const deptData = {
+            'cs': { name: "B.Sc. Computer Science Chronicles", images: ['cs-1.jpg', 'cs-2.jpg', 'cs-3.jpg', 'cs-4.jpg', 'cs-5.jpg'] },
+            'chem': { name: "B.Sc. Chemistry Chronicles", images: ['chem-1.jpg', 'chem-2.jpg', 'chem-3.jpg', 'chem-4.jpg', 'chem-5.jpg'] },
+            'math': { name: "B.Sc. Mathematics Chronicles", images: ['math-1.jpg', 'math-2.jpg', 'math-3.jpg', 'math-4.jpg', 'math-5.jpg'] }
+        };
+
+        function openFlipBook(deptKey) {
+            currentDeptName = deptKey;
+            activeDeptImages = deptData[deptKey].images;
+            currentModalIndex = 0;
+            
+            document.getElementById('modalDeptTitle').innerText = deptData[deptKey].name;
+            document.getElementById('flipBookModal').style.display = 'flex';
+            updateModalView();
+        }
+
+    function closeFlipBook() {
+            document.getElementById('flipBookModal').style.display = 'none';
+        }
+
+        function navigateModalPage(direction) {
+            currentModalIndex += direction;
+            if (currentModalIndex < 0) currentModalIndex = 0;
+            if (currentModalIndex >= activeDeptImages.length) currentModalIndex = activeDeptImages.length - 1;
+            updateModalView();
+        }
+
+        function updateModalView() {
+            document.getElementById('modalBookImage').src = activeDeptImages[currentModalIndex];
+            document.getElementById('modalPageIndicator').innerText = `Page ${currentModalIndex + 1} of ${activeDeptImages.length}`;
+        }
+
+        // Keyboard Arrow Key Navigation Support
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('flipBookModal').style.display === 'flex') {
+                if (event.key === 'ArrowRight') {
+                    navigateModalPage(1);
+                } else if (event.key === 'ArrowLeft') {
+                    navigateModalPage(-1);
+                } else if (event.key === 'Escape') {
+                    closeFlipBook();
+                }
+            }
+        });
+    </script>
+    <!-- ========================================== -->
+    <!-- DEPARTMENT CHRONICLES SECTION (END)       -->
+    <!-- ========================================== -->
 
     <!-- News, Auto-Scrolling Events & Merit Gallery Section -->
     <section class="section-bg" style="padding: 60px 20px;">

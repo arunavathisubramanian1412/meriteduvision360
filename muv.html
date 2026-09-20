@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Merit Arts and Science College</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-dark: #0a192f;
+      --deep-blue: #1e3a8a;
+      --electric-blue: #2563eb;
+      --sky-blue: #38bdf8;
+      --ice-blue: #f0f9ff;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+
+    /* Modern Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--primary-dark), var(--deep-blue));
+      color: white;
+      padding: 60px 20px 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .hero-banner p {
+      color: var(--sky-blue);
+      font-size: 1.1rem;
+    }
+
+    /* Container Area */
+    .main-wrapper {
+      max-width: 1200px;
+      margin: -60px auto 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Info Bar (Floating Layout) */
+    .info-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--electric-blue);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-text h4 {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-text p {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 2px;
+    }
+
+    /* Two Column Layout (Form + Map) */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+    }
+
+    /* Glassmorphism Form Card */
+    .form-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-card h2 {
+      font-size: 1.8rem;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .form-card subtext {
+      display: block;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      border-color: var(--electric-blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+      background: #ffffff;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--electric-blue), var(--deep-blue));
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.95;
+    }
+
+    /* Map Box */
+    .map-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      border-radius: 14px;
+      border: none;
+    }
+
+    /* Map Link Style */
+    .map-link {
+      display: block;
+      text-decoration: none;
+      height: 100%;
+    }
+
+    .direction-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--electric-blue), var(--deep-blue));
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.3s ease;
+    }
+
+    .direction-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner Section -->
+  <div class="hero-banner">
+    <h1>Merit Arts and Science College</h1>
+    <p>Empowering Minds, Enriching Futures | Contact Us</p>
+  </div>
+
+  <div class="main-wrapper">
+    
+    <!-- Floating Quick Info Bar -->
+    <div class="info-bar">
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="info-text">
+          <h4>Call Us Direct</h4>
+          <p>+91 94421 00220</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="info-text">
+          <h4>Official Email</h4>
+          <p>maasc2017@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="info-text">
+          <h4>Campus Address</h4>
+          <p> Idaikal Ambasamudram, TN</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-grid">
+      
+      <!-- Left Side: Interactive Contact Form -->
+      <div class="form-card">
+        <h2>Send Us A Message</h2>
+        <subtext>Fill out the form below for admissions, course details, or general inquiries.</subtext>
+
+        <form action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Doe" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Inquiry Category</label>
+            <select>
+              <option value="admission">Arts & Science Admissions</option>
+              <option value="courses">Undergraduate / Postgraduate Courses</option>
+              <option value="fees">Fees Structure & Scholarships</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Your Message *</label>
+            <textarea rows="4" placeholder="Write your inquiry here..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Side: Google Map with Direct Location Link -->
+      <div class="map-card">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Merit+College+of+Education+Ambasamudram" target="_blank" class="map-link" title="Click to open Merit College on Google Maps">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.434863920973!2d77.3695280758832!3d8.74510349326401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b043d789ffffff%3A0x8e83b4cdd57662c5!2sMerit%20College%20of%20Education!5e0!3m2!1sen!2sin!4v1700000000000" 
+            style="border:0; pointer-events: none;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Merit+College+of+Education+Ambasamudram" target="_blank" class="direction-btn">
+          <i class="fa-solid fa-diamond-turn-right"></i>
+          <span>Get Directions to College</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

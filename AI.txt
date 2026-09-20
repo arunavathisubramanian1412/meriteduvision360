@@ -5,11 +5,11 @@ AI போட் அறிவுசார் ஆவணம் (Knowledge Base Docu
 1. படிப்புகளும் கட்டண விவரங்களும் (Courses & Fee Structure):
 B.Sc Computer Science: ₹10,000
 B.Com: ₹10,000
-B.Sc Artificial Intelligence & Data Science: ₹12,000
-B.Sc Mathematics: ₹8,000
-B.Sc Chemistry: ₹8,000
-B.Sc Physics: ₹8,000
-B.A English Literature: ₹12,000
+B.Sc Artificial Intelligence & Data Science: ₹25,000
+B.Sc Mathematics: ₹10,000
+B.Sc Chemistry: ₹10,000
+B.Sc Physics: ₹10,000
+B.A English Literature: ₹10,000
 2. அட்மிஷன் முறை (Admission Details):
 மாணவர்கள் நேரில் கல்லூரிக்கு வந்தும் அட்மிஷன் போட்டுக்கொள்ளலாம்.
 ஆன்லைன் அட்மிஷன் (Online Admission) வசதியும் தற்பொழுது கிடைக்கப்பெறுகிறது.
@@ -38,4 +38,7 @@ C-DAC Authorized Centre
 Merit Arts & Science College is proud to be the exclusive, Central Government authorized training centre for C-DAC courses. We provide industry-standard training in advanced computing, AI, and software development.
 
 Our curriculum is designed to bridge the gap between academia and industry. Our students achieved a 100% success rate in the recent national certification exams, securing top-tier career placements.
+
+
+it has age eligibility starts at age 17 and upto 40 age
 
